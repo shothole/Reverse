@@ -1,33 +1,41 @@
-string[] words = { "the", "quick", "brown", "fox", "jumps" };  
+using System;
 
-  
+namespace Demo {
 
-IEnumerable<string> query = from word in words  
+   class MyArray {
 
-                            orderby word.Length, word.Substring(0, 1) descending  
+      static void Main(string[] args) {
 
-                            select word;  
+         int[] list = { 29, 15, 30, 98};
 
-  
+         int[] temp = list;
 
-foreach (string str in query)  
+         Console.Write("Original Array: ");
 
-    Console.WriteLine(str);  
+         foreach (int i in list) {
 
-  
+            Console.Write(i + " ");
 
-/* This code produces the following output:  
+         }
 
-  
+         Console.WriteLine();
 
-    the  
+         //反转数组
 
-    fox  
+         Array.Reverse(temp);
 
-    quick  
+         Console.Write("Reversed Array: ");
 
-    jumps  
+         foreach (int i in temp) {
 
-    brown  
+            Console.Write(i + " ");
 
-*/
+         }
+
+         Console.ReadKey();
+
+      }
+
+   }
+
+}
